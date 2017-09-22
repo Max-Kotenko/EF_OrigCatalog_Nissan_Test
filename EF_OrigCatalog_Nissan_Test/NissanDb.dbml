@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="OriginalCatalog" Class="NissanDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MAXPC-6B9ENSF;Initial Catalog=OriginalCatalog;Integrated Security=True;Connect Timeout=30;TrustServerCertificate=True" SettingsObjectName="EF_OrigCatalog_Nissan_Test.Properties.Settings" SettingsPropertyName="OriginalCatalogConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.nissan_engines" Member="nissan_engines">
+    <Type Name="nissan_engine">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="model_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="body" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="engine" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="complete_set" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="transmission" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="seats" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="roof" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="power" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="wheels" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="frame" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="speed" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bed_type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="capacity" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="cab" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="eng_spec" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="equipment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="drive" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="zone" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="intake" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="p_load" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="passengr" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="length" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="duty" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="year" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="region_drive" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="engine_power" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="doors" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="whl_area" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="dest" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="axis" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="exhaust_control" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="sus" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="style" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="fuel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="suspension" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="battery" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="trim_mtl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="series" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="save_gas" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Done" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="nissan_model_nissan_engine" Member="nissan_model" ThisKey="model_id" OtherKey="id" Type="nissan_model" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.nissan_lvl1" Member="nissan_lvl1s">
+    <Type Name="nissan_lvl1">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="nissan_lvl1_nissan_lvl2" Member="nissan_lvl2s" ThisKey="id" OtherKey="lvl1_id" Type="nissan_lvl2" />
+    </Type>
+  </Table>
+  <Table Name="dbo.nissan_lvl2" Member="nissan_lvl2s">
+    <Type Name="nissan_lvl2">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="lvl1_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="nissan_lvl1_nissan_lvl2" Member="nissan_lvl1" ThisKey="lvl1_id" OtherKey="id" Type="nissan_lvl1" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.nissan_models" Member="nissan_models">
+    <Type Name="nissan_model">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="brand_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="date_start" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_end" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="region" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="short_name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="modification" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Done" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="nissan_model_nissan_engine" Member="nissan_engines" ThisKey="id" OtherKey="model_id" Type="nissan_engine" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Elcats_account" Member="Elcats_accounts">
+    <Type Name="Elcats_account">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="login" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="cookie" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="isBanned" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Proxy" Member="Proxies">
+    <Type Name="Proxy">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="host" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="port" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="isWork" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isBanned" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.scheme" Member="schemes">
+    <Type Name="scheme">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="path" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="schemeImage_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="schemeImage_scheme" Member="schemeImage" ThisKey="schemeImage_id" OtherKey="id" Type="schemeImage" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.schemeImage" Member="schemeImages">
+    <Type Name="schemeImage">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MD5" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="isOnAzure" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="schemeImage_scheme" Member="schemes" ThisKey="id" OtherKey="schemeImage_id" Type="scheme" />
+    </Type>
+  </Table>
+</Database>
